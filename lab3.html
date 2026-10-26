@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lab 3</title>
-    <!-- INTERNAL CSS -->
+    
+    <!-- 1. EXTERNAL CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 2. INTERNAL CSS -->
     <style>
         body { 
             background-color: lightyellow; 
@@ -15,24 +19,7 @@
             min-height: 100vh;
             margin: 0;
         } 
-        .regform { 
-            width: 300px; 
-            padding: 25px; 
-            background-color: skyblue; 
-            border-radius: 15px; 
-            box-shadow: 0 0 10px gray; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        } 
         h2 { margin-top: 0; text-align: center; }
-        .form-group {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 12px;
-        }
         label {
             font-size: 16px;
             font-weight: bold;
@@ -40,32 +27,12 @@
             margin-left: 10%;
             margin-bottom: 4px;
         }
-        input { 
-            padding: 10px; 
-            border-radius: 8px; 
-            border: 1px solid #ccc; 
-            width: 80%; 
-            font-size: 16px; 
-            box-sizing: border-box;
-        } 
-        .submit-btn {
-            background-color: green; 
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            width: 50%; 
-            cursor: pointer;
-            margin-top: 15px;
-        }
         .submit-btn:hover { background-color: darkgreen; }
     </style> 
 </head> 
 <body> 
     <form class="regform" onsubmit="validationForm(event)"> 
-        <!-- INLINE CSS used here -->
+        <!-- 3. INLINE CSS -->
         <h2 style="color: darkblue; text-transform: uppercase;">Registration Form</h2> 
         
         <div class="form-group">
