@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lab 3</title>
+    <!-- INTERNAL CSS -->
     <style>
         body { 
             background-color: lightyellow; 
@@ -24,10 +25,7 @@
             flex-direction: column;
             align-items: center;
         } 
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
+        h2 { margin-top: 0; text-align: center; }
         .form-group {
             width: 100%;
             display: flex;
@@ -61,16 +59,14 @@
             width: 50%; 
             cursor: pointer;
             margin-top: 15px;
-            transition: background-color 0.2s;
         }
-        .submit-btn:hover {
-            background-color: darkgreen;
-        }
+        .submit-btn:hover { background-color: darkgreen; }
     </style> 
 </head> 
 <body> 
     <form class="regform" onsubmit="validationForm(event)"> 
-        <h2>Registration Form</h2> 
+        <!-- INLINE CSS used here -->
+        <h2 style="color: darkblue; text-transform: uppercase;">Registration Form</h2> 
         
         <div class="form-group">
             <label for="firstName">Name</label> 
@@ -92,13 +88,12 @@
             <input type="tel" id="phNo" required> 
         </div>
 
-        <button type="submit" class="submit-btn">Submit</button> 
+        <button type="submit" class="submit-btn" style="letter-spacing: 1px;">Submit</button> 
     </form> 
 
     <script>
         function validationForm(event) {
             event.preventDefault();
-
             var firstName = document.getElementById("firstName").value.trim();
             var password = document.getElementById("password").value;
             var mailId = document.getElementById("mailId").value.trim();
@@ -110,24 +105,23 @@
             var phReg = /^[0-9]{10}$/;
 
             if (!nameReg.test(firstName)) {
-                alert("Name must be at least 6 alphabetic characters.");
+                alert("Name should contain alphabets and length not less than 6.");
                 return false;
             } 
             if (!passwordReg.test(password)) {
-                alert("Password must be at least 8 characters and contain at least one special character (!@#$ etc).");
+                alert("Password should not be less than 8 chars and must contain 1 special character.");
                 return false;
             } 
             if (!mailReg.test(mailId)) {
-                alert("Please enter a valid email address containing @ symbol.");
+                alert("E-mail must follow standard pattern name@domain.com");
                 return false;
             } 
             if (!phReg.test(phNo)) {
-                alert("Phone number must be exactly 10 digits.");
+                alert("Phone number should contain 10 digits.");
                 return false;
             }
-
             alert("Registration successful!");
-	    event.target.reset();
+            event.target.reset();
             return true;
         }
     </script>
