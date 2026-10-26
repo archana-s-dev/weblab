@@ -69,63 +69,66 @@
     </style> 
 </head> 
 <body> 
-    <form class="regform"> 
+    <form class="regform" onsubmit="validationForm(event)"> 
         <h2>Registration Form</h2> 
         
         <div class="form-group">
-            <label>Name</label> 
+            <label for="firstName">Name</label> 
             <input type="text" id="firstName" required> 
         </div>
 
         <div class="form-group">
-            <label>Password</label> 
+            <label for="password">Password</label> 
             <input type="password" id="password" required> 
         </div>
 
         <div class="form-group">
-            <label>Email</label> 
+            <label for="mailId">Email</label> 
             <input type="text" id="mailId" required> 
         </div>
 
         <div class="form-group">
-            <label>Mobile No.</label> 
+            <label for="phNo">Mobile No.</label> 
             <input type="tel" id="phNo" required> 
         </div>
 
-        <button type="submit" class="submit-btn" onclick="validationForm()">Submit</button> 
+        <button type="submit" class="submit-btn">Submit</button> 
     </form> 
 
     <script>
-        function validationForm() {
-            var firstName = document.getElementById("firstName").value;
+        function validationForm(event) {
+            event.preventDefault();
+
+            var firstName = document.getElementById("firstName").value.trim();
             var password = document.getElementById("password").value;
-            var mailId = document.getElementById("mailId").value;
-            var phNo = document.getElementById("phNo").value;
+            var mailId = document.getElementById("mailId").value.trim();
+            var phNo = document.getElementById("phNo").value.trim();
 
             var nameReg = /^[a-zA-Z]{6,}$/;
-            var passwordReg = /^.{6,}$/;
+            var passwordReg = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
             var mailReg = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             var phReg = /^[0-9]{10}$/;
 
-            var isValid = true;
-
             if (!nameReg.test(firstName)) {
-                alert("First name must be at least 6 alphabetic characters.");
+                alert("Name must be at least 6 alphabetic characters.");
+                return false;
             } 
             if (!passwordReg.test(password)) {
-                alert("Password must be at least 6 characters long.");
+                alert("Password must be at least 8 characters and contain at least one special character (!@#$ etc).");
+                return false;
             } 
             if (!mailReg.test(mailId)) {
-                alert("Please enter a valid email address.");
+                alert("Please enter a valid email address containing @ symbol.");
+                return false;
             } 
             if (!phReg.test(phNo)) {
                 alert("Phone number must be exactly 10 digits.");
+                return false;
             }
 
-            if (isValid) {
-                alert("Registration successful!");
-                return true;
-            }
+            alert("Registration successful!");
+	    event.target.reset();
+            return true;
         }
     </script>
 </body> 
