@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/css' href='4style.css'?>
+<STUDENTDATA>
+	<STUDENT>
+		<USN>1BY24CS401</USN>
+		<NAME>HARINI</NAME>
+		<COLLEGE>BMSIT</COLLEGE>
+		<BRANCH>CSE</BRANCH>
+		<YEAR>2024</YEAR>
+		<EMAIL>harini@bmsit.in</EMAIL>
+	</STUDENT>
+	<STUDENT>
+		<USN>1BY23CS402</USN>
+		<NAME>KARTHIK</NAME>
+		<COLLEGE>BMSIT</COLLEGE>
+		<BRANCH>ECE</BRANCH>
+		<YEAR>2023</YEAR>
+		<EMAIL>karthik@bmsit.in</EMAIL>
+	</STUDENT>
+	<STUDENT>
+		<USN>1BY24CS403</USN>
+		<NAME>SAMMY</NAME>
+		<COLLEGE>BMSIT</COLLEGE>
+		<BRANCH>CSE</BRANCH>
+		<YEAR>2024</YEAR>
+		<EMAIL>sammy@bmsit.in</EMAIL>
+	</STUDENT>
+</STUDENTDATA>
