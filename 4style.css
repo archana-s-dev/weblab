@@ -4,31 +4,32 @@
 }
 
 USN {
-	color: red;
+	color: #1E3A8A;
 	font-size: 30px;
+	font-weight: bold;
 }
 
 NAME {
-	color: blue;
+	color: #0F172A;
 	font-size: 27px;
 }
 
 COLLEGE {
-	color: gray;
+	color: #475569;
 	font-size: 24px;
 }
 
 BRANCH {
-	color: green;
+	color: #0369A1;
 	font-size: 21px;
 }
 
 YEAR {
-	color: purple;
+	color: #64748B;
 	font-size: 18px;
 }
 
 EMAIL {
-	color: black;
+	color: #2563EB;
 	font-size: 15px;
 }
